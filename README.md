@@ -26,8 +26,8 @@ So, to recap, the install script will:
 
 Installation
 ------------
-`````` bash
-git clone git://github.com/michaeljsmalley/dotfiles ~/dotfiles
+```bash
+git clone git://github.com/coryshaw1/dotfiles ~/dotfiles
 cd ~/dotfiles
 ./makesymlinks.sh
 ```
