@@ -16,6 +16,7 @@ Plug 'mattn/emmet-vim'
 Plug 'mhinz/vim-signify'
 Plug 'mhinz/vim-startify'
 Plug 'norcalli/nvim-colorizer.lua'
+Plug 'numToStr/Comment.nvim'
 Plug 'ObserverOfTime/discord.nvim', {'do': ':UpdateRemotePlugins'}
 Plug 'pechorin/any-jump.vim'
 Plug 'petertriho/nvim-scrollbar'
@@ -30,7 +31,6 @@ Plug 'ternjs/tern_for_vim', { 'do': 'npm install && npm install -g tern' }
 Plug 'terryma/vim-multiple-cursors'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'tmhedberg/SimpylFold'
-Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-sensible'
@@ -108,6 +108,7 @@ source ~/.config/nvim/modules/blameline.vim
 source ~/.config/nvim/modules/bufferline.vim
 source ~/.config/nvim/modules/codestats.vim
 source ~/.config/nvim/modules/colorizer.vim
+source ~/.config/nvim/modules/comment.vim
 source ~/.config/nvim/modules/folds.vim
 source ~/.config/nvim/modules/highlightedyank.vim
 source ~/.config/nvim/modules/lsp.vim
