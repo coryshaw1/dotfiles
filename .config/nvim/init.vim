@@ -4,6 +4,7 @@ call plug#begin('~/.vim/plugged')
 " Declare the list of plugins.
 Plug 'airblade/vim-gitgutter'
 Plug 'benmills/vimux'
+Plug 'andweeb/presence.nvim'
 Plug 'christoomey/vim-sort-motion'
 Plug 'elzr/vim-json'
 Plug 'ernstvanderlinden/vim-coldfusion'
@@ -18,7 +19,6 @@ Plug 'mhinz/vim-signify'
 Plug 'mhinz/vim-startify'
 Plug 'norcalli/nvim-colorizer.lua'
 Plug 'numToStr/Comment.nvim'
-Plug 'ObserverOfTime/discord.nvim', {'do': ':UpdateRemotePlugins'}
 Plug 'pechorin/any-jump.vim'
 Plug 'petertriho/nvim-scrollbar'
 Plug 'plasticboy/vim-markdown'
