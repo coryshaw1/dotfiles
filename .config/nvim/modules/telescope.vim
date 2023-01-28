@@ -12,7 +12,8 @@ require('telescope').setup{
         ["<C-h>"] = "which_key",
         ["<c-a>"] = function() print(vim.inspect(action_state.get_selected_entry())) end
       }
-    }
+    },
+    file_ignore_patterns = {"vendor", "node_modules", "dist"}
   },
   pickers = {
     -- Default configuration for builtin pickers goes here:
