@@ -74,7 +74,7 @@ local cmp = require'cmp'
 cmp.setup({
     snippet = {
         expand = function(args)
-            vim.fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users.
+            require('luasnip').lsp_expand(args.body)
         end,
     },
     mapping = {
@@ -90,8 +90,9 @@ cmp.setup({
         ['<S-Tab'] = cmp.mapping.select_prev_item(),
         ['<Tab>'] = cmp.mapping({
             i = function(a, b)
-                if vim.fn["UltiSnips#CanExpandSnippet"]() == 1 then
-                    return cmp.confirm({ select = true })
+                if not cmp.visible() then
+                    vim.api.nvim_feedkeys('    ', 'i', true) -- Send 4 spaces for a tab
+                    return
                 end
 
                 cmp.select_next_item({ behavior = cmp.SelectBehavior.Replace })
@@ -100,7 +101,8 @@ cmp.setup({
     },
     sources = cmp.config.sources({
         { name = 'nvim_lsp' },
-        { name = 'ultisnips' }, -- For ultisnips users.
+        { name = 'nvim_lsp_signature_help' },
+        { name = 'luasnip' }, -- For luasnip users.
     }, {
         { name = 'buffer' },
     }),
@@ -116,6 +118,7 @@ cmp.setup({
             buffer = "[Buffer]",
             nvim_lua = "[Lua]",
             cmp_tabnine = "[TabNine]",
+            luasnip = "[LuaSnip]",
         })[entry.source.name]
         return vim_item
         end
@@ -138,4 +141,5 @@ cmp.setup.cmdline(':', {
     })
 })
 
+require("luasnip.loaders.from_vscode").load()
 EOF

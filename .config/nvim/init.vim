@@ -12,6 +12,7 @@ Plug 'https://gitlab.com/code-stats/code-stats-vim.git'
 Plug 'justinmk/vim-sneak'
 Plug 'machakann/vim-highlightedyank'
 Plug 'majutsushi/tagbar'
+Plug 'L3MON4D3/LuaSnip'
 Plug 'mattn/emmet-vim'
 Plug 'mhinz/vim-signify'
 Plug 'mhinz/vim-startify'
@@ -25,7 +26,6 @@ Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 Plug 'psliwka/vim-smoothie'
 Plug 'puremourning/vimspector'
 Plug 'scrooloose/nerdTree'
-Plug 'SirVer/ultisnips'
 Plug 'TaDaa/vimade'
 Plug 'ternjs/tern_for_vim', { 'do': 'npm install && npm install -g tern' }
 Plug 'terryma/vim-multiple-cursors'
@@ -111,6 +111,7 @@ source ~/.config/nvim/modules/colorizer.vim
 source ~/.config/nvim/modules/comment.vim
 source ~/.config/nvim/modules/folds.vim
 source ~/.config/nvim/modules/highlightedyank.vim
+source ~/.config/nvim/modules/luasnip.vim
 source ~/.config/nvim/modules/lsp.vim
 source ~/.config/nvim/modules/lightline.vim
 source ~/.config/nvim/modules/markdown.vim
@@ -122,6 +123,5 @@ source ~/.config/nvim/modules/splits.vim
 source ~/.config/nvim/modules/tabs.vim
 source ~/.config/nvim/modules/tags.vim
 source ~/.config/nvim/modules/telescope.vim
-source ~/.config/nvim/modules/ultisnips.vim
 source ~/.config/nvim/modules/vimspector.vim
 source ~/.config/nvim/modules/yank.vim
