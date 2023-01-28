@@ -116,6 +116,7 @@ source ~/.config/nvim/modules/lsp.vim
 source ~/.config/nvim/modules/lightline.vim
 source ~/.config/nvim/modules/markdown.vim
 source ~/.config/nvim/modules/nerdtree.vim
+source ~/.config/nvim/modules/presence.vim
 source ~/.config/nvim/modules/scrollbar.vim
 source ~/.config/nvim/modules/sneak.vim
 source ~/.config/nvim/modules/sortmotion.vim
