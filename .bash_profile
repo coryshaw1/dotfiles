@@ -1,6 +1,6 @@
 export PATH=/usr/local/bin:$PATH
 
-export PATH=/usr/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin:/usr/local/mysql/bin
+export PATH=/usr/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin:/usr/local/mysql/bin:/opt/homebrew/bin
 export PATH=/usr/local/mysql/bin:$PATH
 unset LSCOLORS
 export CLICOLOR=1
@@ -24,9 +24,9 @@ export GO111MODULE=on
 export PATH=${PATH}:`go env GOPATH`/bin
 
 if [ $ITERM_SESSION_ID ]; then
-  export PROMPT_COMMAND='echo -ne "\033];${PWD##*/}\007"; ':"$PROMPT_COMMAND";
+	export PROMPT_COMMAND='echo -ne "\033];${PWD##*/}\007"; ':"$PROMPT_COMMAND"
 fi
 
 if [ -f /sw/etc/bash_completion ]; then
-   . /sw/etc/bash_completion
+	. /sw/etc/bash_completion
 fi
