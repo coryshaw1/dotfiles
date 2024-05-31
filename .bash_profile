@@ -10,6 +10,7 @@ export CLICOLOR_FORCE=1
 alias ls="eza --color=always --long --git --icons=always --no-time --no-filesize --no-user --no-permissions"
 alias ll="eza --color=always --long --git --icons=always"
 alias vi="nvim"
+alias vim="nvim"
 alias sudo="sudo "
 alias tmux="tmux -2"
 alias cat="bat"
