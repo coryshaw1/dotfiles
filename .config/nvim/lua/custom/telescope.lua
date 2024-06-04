@@ -34,23 +34,23 @@ pcall(require("telescope").load_extension, "neoclip")
 
 local builtin = require "telescope.builtin"
 
-vim.keymap.set("n", "<leader>ff", builtin.find_files)
-vim.keymap.set("n", "<C-P>", builtin.find_files)
-vim.keymap.set("n", "<leader>fg", builtin.live_grep)
-vim.keymap.set("n", "<leader>fb", builtin.buffers)
-vim.keymap.set("n", "<leader>fh", builtin.help_tags)
-vim.keymap.set("n", "<leader>fr", builtin.lsp_references)
-vim.keymap.set("n", "gr", builtin.lsp_references)
-vim.keymap.set("n", "<C-_>", builtin.current_buffer_fuzzy_find)
-vim.keymap.set("n", "<C-m>", ":Telescope neoclip a<cr>")
+vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "Telescope find files" })
+vim.keymap.set("n", "<C-P>", builtin.find_files, { desc = "Telescope find files" })
+vim.keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "Telescope grep file contents" })
+vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = "Telescope find buffers" })
+vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "Telescope find help tags" })
+vim.keymap.set("n", "<leader>fr", builtin.lsp_references, { desc = "Telescope find references" })
+vim.keymap.set("n", "gr", builtin.lsp_references, { desc = "Telescope find references" })
+vim.keymap.set("n", "<C-_>", builtin.current_buffer_fuzzy_find, { desc = "Telescope find in buffer" })
+vim.keymap.set("n", "<C-m>", ":Telescope neoclip a<cr>", { desc = "Telescope neoclip" })
 
-vim.keymap.set("n", "<leader>fs", builtin.grep_string)
+vim.keymap.set("n", "<leader>fs", builtin.grep_string, { desc = "Telescope grep for string" })
 
 vim.keymap.set("n", "<leader>fa", function()
   ---@diagnostic disable-next-line: param-type-mismatch
   builtin.find_files { cwd = vim.fs.joinpath(vim.fn.stdpath "data", "lazy") }
-end)
+end, { desc = "Telescope file search in lazy dir" })
 
 vim.keymap.set("n", "<leader>en", function()
   builtin.find_files { cwd = vim.fn.stdpath "config" }
-end)
+end, { desc = "Telescope file search in config dotfiles" })
