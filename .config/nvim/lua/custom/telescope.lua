@@ -43,6 +43,7 @@ vim.keymap.set("n", "<leader>fr", builtin.lsp_references, { desc = "Telescope fi
 vim.keymap.set("n", "gr", builtin.lsp_references, { desc = "Telescope find references" })
 vim.keymap.set("n", "<C-_>", builtin.current_buffer_fuzzy_find, { desc = "Telescope find in buffer" })
 vim.keymap.set("n", "<C-m>", ":Telescope neoclip a<cr>", { desc = "Telescope neoclip" })
+vim.keymap.set("n", "<leader>ft", "<cmd>TodoTelescope<cr>", { desc = "Find todos" })
 
 vim.keymap.set("n", "<leader>fs", builtin.grep_string, { desc = "Telescope grep for string" })
 

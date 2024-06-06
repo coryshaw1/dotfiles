@@ -10,7 +10,8 @@ return {
       },
       "nvim-telescope/telescope-ui-select.nvim",
       -- "kkharji/sqlite.lua",
-      { "AckslD/nvim-neoclip.lua" },
+      "AckslD/nvim-neoclip.lua",
+      "folke/todo-comments.nvim",
     },
     config = function()
       require "custom.telescope"
