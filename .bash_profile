@@ -7,14 +7,15 @@ export CLICOLOR=1
 export CLICOLOR_FORCE=1
 
 # alias ll="ls -GalhF"
-alias ls="eza --color=always --long --git --icons=always --no-time --no-filesize --no-user --no-permissions"
-alias ll="eza --color=always --long --git --icons=always"
+alias ls="eza --all --color=always --long --git --icons=always --no-time --no-filesize --no-user --no-permissions"
+alias ll="eza --all --color=always --long --git --icons=always"
 alias vi="nvim"
 alias vim="nvim"
 alias sudo="sudo "
 alias tmux="tmux -2"
 alias cat="bat"
 alias cd="z"
+alias :q="exit"
 
 eval "$(rbenv init -)"
 export PATH="/usr/local/opt/python@2/libexec/bin:$PATH"
