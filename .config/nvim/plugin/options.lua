@@ -51,3 +51,8 @@ vim.cmd [[
 vim.cmd [[
   autocmd FileType dbout setlocal nofoldenable
 ]]
+
+vim.api.nvim_create_autocmd("VimLeavePre", {
+  pattern = "*",
+  command = ":mks! ~/.config/nvim/session.vim",
+})
