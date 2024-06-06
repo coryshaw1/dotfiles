@@ -34,6 +34,13 @@ vim.g.loaded_netrwPlugin = 1
 -- optionally enable 24-bit colour
 opt.termguicolors = true
 
+opt.ignorecase = true
+opt.smartcase = true
+
+opt.backspace = "indent,eol,start"
+
+opt.swapfile = false
+
 vim.cmd [[
   augroup highlight_yank
   autocmd!
