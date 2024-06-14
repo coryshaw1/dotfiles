@@ -49,6 +49,21 @@ cmp.setup {
       require("luasnip").lsp_expand(args.body)
     end,
   },
+  formatting = {
+    fields = { "abbr", "kind", "menu" },
+    expandable_indicator = true,
+    format = lspkind.cmp_format {
+      mode = "symbol_text",
+      maxwidth = 75,
+      ellipsis_char = "...",
+      symbol_map = {
+        Copilot = "",
+      },
+    },
+  },
+  experimental = {
+    ghost_text = true,
+  },
 }
 
 -- Setup up vim-dadbod
