@@ -34,6 +34,7 @@ return {
         html = true,
         eslint = true,
         pylsp = true,
+        taplo = true,
 
         -- Probably want to disable formatting for this lang server
         tsserver = true,
@@ -77,6 +78,7 @@ return {
         "eslint",
         "html",
         "cssls",
+        "taplo",
       }
 
       vim.list_extend(ensure_installed, servers_to_install)
