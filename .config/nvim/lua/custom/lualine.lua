@@ -22,9 +22,20 @@ require("lualine").setup {
     },
   },
   sections = {
-    lualine_a = { "mode", "paste" },
+    lualine_a = {
+      "mode",
+      "paste",
+    },
     lualine_b = { "branch", "diff", "diagnostics" },
-    lualine_c = { "filename", "modified" },
+    lualine_c = {
+      "filename",
+      "modified",
+      {
+        require("noice").api.status.mode.get,
+        cond = require("noice").api.status.mode.has,
+        color = { fg = "#ff9e64" },
+      },
+    },
     lualine_x = { "fileformat", "encoding", "filetype", CodeStatsXp },
     lualine_y = { "progress" },
     lualine_z = { "location" },
