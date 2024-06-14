@@ -8,6 +8,26 @@ require("telescope").setup {
       limit = 100,
     },
   },
+  defaults = {
+    file_ignore_patterns = {
+      "%.git/",
+      "node_modules/",
+      "dist/",
+      "yarn%.lock",
+      "package%-lock%.json",
+    },
+  },
+  pickers = {
+    find_files = {
+      hidden = true,
+    },
+    grep_string = {
+      additional_args = { "--hidden" },
+    },
+    live_grep = {
+      additional_args = { "--hidden" },
+    },
+  },
 }
 
 require("neoclip").setup {
