@@ -9,7 +9,7 @@
 dir=~/dotfiles                                            # dotfiles directory
 olddir=~/dotfiles_old                                     # old dotfiles backup directory
 files=".bash_profile .zshrc .tmux.conf .gitignore_global" # list of files to symlink in homedir
-directories=".applescripts .config/nvim"         # list of directories to symlink in homedir
+directories=".applescripts .config/nvim .config/oh-my-posh"         # list of directories to symlink in homedir
 
 ##########
 
@@ -42,10 +42,10 @@ install_zsh () {
 # Test to see if zshell is installed.  If it is:
 if [ -f /bin/zsh -o -f /usr/bin/zsh ]; then
     # Clone my oh-my-zsh repository from GitHub only if it isn't already present
-    if [[ ! -d ~/.oh-my-zsh/ ]]; then
+    if [[ ! -d ~/.config/oh-my-posh/ ]]; then
         echo "!==================================!"
         echo "!==================================!"
-        echo "!==MAKE SURE TO INSTALL OH MY ZSH==!"
+        echo "!=MAKE SURE TO INSTALL OH MY POSH!=!"
         echo "!==================================!"
         echo "!==================================!"
     fi
