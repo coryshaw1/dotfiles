@@ -17,8 +17,21 @@ return {
       variables = { "italic" },
     },
     integrations = {
-      treesitter = true,
       alpha = true,
+      barbar = false,
+      bufferline = false,
+      cmp = true,
+      dashboard = true,
+      fern = false,
+      gitgutter = true,
+      gitsigns = true,
+      hop = false,
+      indent_blankline = {
+        enabled = true,
+        colored_indent_levels = false,
+      },
+      lightspeed = false,
+      markdown = true,
       native_lsp = {
         enabled = true,
         virtual_text = {
@@ -34,30 +47,18 @@ return {
           information = { "underline" },
         },
       },
-      cmp = true,
-      gitgutter = true,
-      gitsigns = true,
-      telescope = true,
-      indent_blankline = {
-        enabled = true,
-        colored_indent_levels = false,
-      },
-      dashboard = true,
       neogit = false,
-      vim_sneak = false,
-      fern = false,
-      barbar = false,
-      bufferline = true,
-      markdown = true,
-      lightspeed = false,
-      ts_rainbow = false,
-      hop = false,
       notify = true,
       telekasten = true,
+      telescope = true,
+      treesitter = true,
+      ts_rainbow = false,
+      vim_sneak = false,
     },
   },
   config = function(_, opts)
     require("catppuccin").setup(opts)
     vim.cmd.colorscheme "catppuccin"
+    vim.cmd "hi Normal guibg=NONE ctermbg=NONE" -- force background to transparent, but not bufferline
   end,
 }
