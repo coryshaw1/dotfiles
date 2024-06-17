@@ -1,31 +1,42 @@
-Dotfiles
-========
+## Dotfiles
 This repository includes all of my custom dotfiles.  They should be cloned to
-your home directory so that the path is `~/dotfiles/`.  The included setup
-script creates symlinks from your home directory to the files which are located
-in `~/dotfiles/`.
+somewhere that doesn't clone the files directly to your home `~` directory. For example it's best to clone to a directory like `~/dotfiles`.
 
-The setup script is smart enough to back up your existing dotfiles into a
-`~/dotfiles_old/` directory if you already have any dotfiles of the same name as
-the dotfile symlinks being created in your home directory.
+Once the files are cloned, we will use GNU Stow to create symlinks from the cloned directory to the home directory. This allows all config locations to be correct based on the symlinks.
 
-I also prefer `zsh` as my shell of choice, so the install checks to see if `zsh`
-is installed.  If `zsh` is installed, and it is not already configured as the
-default shell, the setup script will execute a `chsh -s $(which zsh)`.  This
-changes the default shell to zsh, and takes effect as soon as a new zsh is
-spawned or on next login.
+## Screenshots
+![tmux and kitty](./assets/kitty-tmux.png)
+![neovim](./assets/neovim.png)
+![telescope](./assets/telescope.png)
 
-So, to recap, the install script will:
+### Theme
+[Catppuccin Macchiato](https://github.com/catppuccin/catppuccin)
 
-1. Back up any existing dotfiles in your home directory to `~/dotfiles_old/`
-2. Create symlinks to the dotfiles in `~/dotfiles/` in your home directory
-3. Check to see if `zsh` is installed, if it isn't, try to install it.
-4. If zsh is installed, run a `chsh -s` to set it as the default shell.
+### Font
+[Fira Code Nerd Font](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/FiraCode)
 
-Installation
-------------
+### Config Included
+* [Neovim](https://github.com/neovim/neovim)
+* [Tmux](https://github.com/tmux/tmux)
+* [Kitty](https://github.com/kovidgoyal/kitty)
+* [oh-my-posh](https://github.com/JanDeDobbeleer/oh-my-posh)
+
+## Installation
 ```bash
-git clone git://github.com/coryshaw1/dotfiles ~/dotfiles
+git clone https://github.com/coryshaw1/dotfiles ~/dotfiles
 cd ~/dotfiles
-./makesymlinks.sh
+stow .
 ```
+
+This will get you up and running, but there are various other things that need to be installed on top of the dotfiles. First off, you will need a package manager. For macOS, I always use [Homebrew](https://brew.sh/), but for Linux, the package manager may be dependent on your distro. Windows users can use [Chocolatey](https://chocolatey.org/).
+
+#### Other packages to install via package manager
+* [zsh](https://git.code.sf.net/p/zsh/code)
+* [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
+* [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
+* [fzf](https://github.com/junegunn/fzf)
+* [fzf-git](https://github.com/junegunn/fzf-git.sh)
+* [zoxide](https://github.com/ajeetdsouza/zoxide) - Better cd
+* [eza](https://github.com/eza-community/eza) - Better ls
+* [bat](https://github.com/sharkdp/bat) - Better cat with syntax highlighting
+* [sesh](https://github.com/joshmedeski/sesh) - Easy session manager
