@@ -68,3 +68,7 @@ _fzf_comprun() {
     *)            fzf --preview "$show_file_or_dir_preview" "$@" ;;
   esac
 }
+
+# Alt+left/right Word Navigation
+bindkey "^[[1;3C" forward-word
+bindkey "^[[1;3D" backward-word
