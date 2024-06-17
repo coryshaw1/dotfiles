@@ -13,9 +13,14 @@ alias vi="nvim"
 alias vim="nvim"
 alias sudo="sudo "
 alias tmux="tmux -2"
+alias tm=sesh_connect_list
 alias cat="bat"
 alias cd="z"
 alias :q="exit"
+
+function sesh_connect_list() {
+	sesh connect $(sesh list -i | gum filter --limit 1 --placeholder 'Pick a sesh' --height 50 --prompt='⚡')
+}
 
 eval "$(rbenv init -)"
 export PATH="/usr/local/opt/python@2/libexec/bin:$PATH"
