@@ -40,19 +40,3 @@ opt.smartcase = true
 opt.backspace = "indent,eol,start"
 
 opt.swapfile = false
-
-vim.cmd [[
-  augroup highlight_yank
-  autocmd!
-  au TextYankPost * silent! lua vim.highlight.on_yank({higroup="Visual", timeout=200})
-  augroup END
-]]
-
-vim.cmd [[
-  autocmd FileType dbout setlocal nofoldenable
-]]
-
-vim.api.nvim_create_autocmd("VimLeavePre", {
-  pattern = "*",
-  command = ":mks! ~/.config/nvim/session.vim",
-})
