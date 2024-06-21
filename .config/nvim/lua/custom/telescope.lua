@@ -15,6 +15,9 @@ require("telescope").setup {
       "dist/",
       "yarn%.lock",
       "package%-lock%.json",
+      "%.jpg",
+      "%.jpeg",
+      "%.png",
     },
   },
   pickers = {
