@@ -51,6 +51,7 @@ require("neoclip").setup {
 
 pcall(require("telescope").load_extension, "fzf")
 pcall(require("telescope").load_extension, "neoclip")
+pcall(require("telescope").load_extension, "noice")
 
 local builtin = require "telescope.builtin"
 
@@ -66,7 +67,8 @@ vim.keymap.set("n", "gr", builtin.lsp_references, { desc = "LSP: Find references
 vim.keymap.set("n", "gi", builtin.lsp_implementations, { desc = "LSP: Find references" })
 vim.keymap.set("n", "<C-_>", builtin.current_buffer_fuzzy_find, { desc = "Telescope find in buffer" })
 vim.keymap.set("n", "<C-m>", ":Telescope neoclip a<cr>", { desc = "Telescope neoclip" })
-vim.keymap.set("n", "<leader>ft", "<cmd>TodoTelescope<cr>", { desc = "Find todos" })
+vim.keymap.set("n", "<leader>ft", ":TodoTelescope<cr>", { desc = "Find todos" })
+vim.keymap.set("n", "<leader>fm", ":Telescope noice<cr>", { desc = "Telescope messages (via noice)" })
 
 vim.keymap.set("n", "<leader>fa", function()
   ---@diagnostic disable-next-line: param-type-mismatch
