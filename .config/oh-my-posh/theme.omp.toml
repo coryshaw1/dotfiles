@@ -6,6 +6,7 @@ final_space = true
 [[blocks]]
 type = 'prompt'
 alignment = 'left'
+newline = true
 
   [[blocks.segments]]
   type = 'os'
@@ -56,7 +57,6 @@ alignment = 'left'
 
     [blocks.segments.properties]
     branch_icon = ' '
-    branch_max_length = 25
     cherry_pick_icon = ' '
     commit_icon = ' '
     fetch_status = true
@@ -74,11 +74,32 @@ alignment = 'left'
       Untracked = '<p:yellow>%d</> '
       Unmerged = '<p:yellow>%d</> '
 
+[[blocks]]
+type = 'prompt'
+alignment = 'left'
+
   [[blocks.segments]]
   type = 'text'
   style = 'plain'
-  foreground = 'p:blue'
+  foreground_templates = [
+    '{{if gt .Code 0}}p:red{{end}}',
+    '{{if eq .Code 0}}p:blue{{end}}',
+  ]
+  background = 'transparent'
   template = ''
+
+[transient_prompt]
+foreground_templates = [
+  '{{if gt .Code 0}}p:red{{end}}',
+  '{{if eq .Code 0}}p:blue{{end}}',
+]
+background = 'transparent'
+template = ' '
+
+[secondary_prompt]
+foreground = 'p:blue'
+background = 'transparent'
+template = ' '
 
 [[blocks]]
 alignment = 'right'
