@@ -11,6 +11,7 @@ require("telescope").setup {
   defaults = {
     file_ignore_patterns = {
       "%.git/",
+      "%.obsidian/",
       "node_modules/",
       "dist/",
       "yarn%.lock",
