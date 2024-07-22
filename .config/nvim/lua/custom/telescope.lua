@@ -7,6 +7,9 @@ require("telescope").setup {
     history = {
       limit = 100,
     },
+    media_files = {
+      filetypes = { "png", "webp", "jpg", "jpeg" },
+    },
   },
   defaults = {
     file_ignore_patterns = {
@@ -54,6 +57,7 @@ require("neoclip").setup {
 }
 
 pcall(require("telescope").load_extension, "fzf")
+pcall(require("telescope").load_extension, "media_files")
 pcall(require("telescope").load_extension, "neoclip")
 pcall(require("telescope").load_extension, "noice")
 

@@ -9,6 +9,7 @@ return {
         build = "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build",
       },
       "nvim-telescope/telescope-ui-select.nvim",
+      "nvim-telescope/telescope-media-files.nvim",
       -- "kkharji/sqlite.lua",
       "AckslD/nvim-neoclip.lua",
       "folke/todo-comments.nvim",
