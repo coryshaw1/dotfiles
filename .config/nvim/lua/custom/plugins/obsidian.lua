@@ -36,5 +36,11 @@ return {
       end
       return suffix
     end,
+    ui = {
+      -- use render-markdown instead for these
+      checkboxes = {},
+      bullets = {},
+      external_link_icon = {},
+    },
   },
 }

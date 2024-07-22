@@ -8,6 +8,13 @@ return {
     end,
   },
   {
+    "MeanderingProgrammer/markdown.nvim",
+    name = "render-markdown",
+    main = "render-markdown",
+    dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-tree/nvim-web-devicons" },
+    opts = {},
+  },
+  {
     "3rd/image.nvim",
     -- Disable on Windows system
     cond = function()
