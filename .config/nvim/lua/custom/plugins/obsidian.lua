@@ -38,6 +38,7 @@ return {
     end,
     ui = {
       -- use render-markdown instead for these
+      enable = false,
       checkboxes = {},
       bullets = {},
       external_link_icon = {},
