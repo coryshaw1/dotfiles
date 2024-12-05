@@ -20,8 +20,9 @@ return {
     cond = function()
       return vim.fn.has "win32" ~= 1
     end,
+    build = false,
     dependencies = {
-      "leafo/magick",
+      "kiyoon/magick.nvim",
     },
     opts = {
       backend = "kitty",
