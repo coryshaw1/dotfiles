@@ -10,6 +10,9 @@ require("telescope").setup {
     media_files = {
       filetypes = { "png", "webp", "jpg", "jpeg" },
     },
+    persisted = {
+      layout_config = { width = 0.55, height = 0.55 },
+    },
   },
   defaults = {
     file_ignore_patterns = {
@@ -22,6 +25,7 @@ require("telescope").setup {
       "%.jpg",
       "%.jpeg",
       "%.png",
+      "%.DS_Store",
     },
   },
   pickers = {
@@ -60,6 +64,7 @@ pcall(require("telescope").load_extension, "fzf")
 pcall(require("telescope").load_extension, "media_files")
 pcall(require("telescope").load_extension, "neoclip")
 pcall(require("telescope").load_extension, "noice")
+pcall(require("telescope").load_extension, "persisted")
 
 local builtin = require "telescope.builtin"
 
@@ -77,6 +82,7 @@ vim.keymap.set("n", "<C-_>", builtin.current_buffer_fuzzy_find, { desc = "Telesc
 vim.keymap.set("n", "<C-m>", ":Telescope neoclip a<cr>", { desc = "Telescope neoclip" })
 vim.keymap.set("n", "<leader>ft", ":TodoTelescope<cr>", { desc = "Find todos" })
 vim.keymap.set("n", "<leader>fm", ":Telescope noice<cr>", { desc = "Telescope messages (via noice)" })
+vim.keymap.set("n", "<leader>fp", ":Telescope persisted<cr>", { desc = "Telescope sessions (via persisted)" })
 
 vim.keymap.set("n", "<leader>fa", function()
   ---@diagnostic disable-next-line: param-type-mismatch
