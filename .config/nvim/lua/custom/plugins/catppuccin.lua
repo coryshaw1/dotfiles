@@ -17,7 +17,7 @@ return {
       variables = { "italic" },
     },
     integrations = {
-      alpha = true,
+      alpha = false,
       barbar = false,
       bufferline = false,
       cmp = true,
