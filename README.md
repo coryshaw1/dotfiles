@@ -20,6 +20,7 @@ Once the files are cloned, we will use GNU Stow to create symlinks from the clon
 * [Tmux](https://github.com/tmux/tmux)
 * [Kitty](https://github.com/kovidgoyal/kitty)
 * [oh-my-posh](https://github.com/JanDeDobbeleer/oh-my-posh)
+* [ghostty](https://github.com/ghostty-org/ghostty)
 
 ## Installation
 ```bash

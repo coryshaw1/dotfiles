@@ -1,0 +1,16 @@
+theme = "catppuccin-macchiato"
+
+font-family= "FiraCode Nerd Font"
+font-size = 11
+font-thicken = true
+window-inherit-font-size = false
+
+window-padding-y = 0,0
+window-padding-balance = false
+background-opacity = 1
+
+cursor-click-to-move = true
+macos-option-as-alt = true
+macos-titlebar-style = hidden
+
+quit-after-last-window-closed = true
