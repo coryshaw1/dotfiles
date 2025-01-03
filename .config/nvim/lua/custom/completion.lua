@@ -5,6 +5,15 @@ local lspkind = require "lspkind"
 lspkind.init {}
 
 local cmp = require "cmp"
+local colorful_menu = require "colorful-menu"
+
+colorful_menu.setup {
+  ft = {
+    typescript = {
+      ls = "typescript-language-server",
+    },
+  },
+}
 
 cmp.setup {
   sources = {
@@ -57,14 +66,27 @@ cmp.setup {
   formatting = {
     fields = { "abbr", "kind", "menu" },
     expandable_indicator = true,
-    format = lspkind.cmp_format {
-      mode = "symbol_text",
-      maxwidth = 75,
-      ellipsis_char = "...",
-      symbol_map = {
-        Copilot = "",
-      },
-    },
+    format = function(entry, vim_item)
+      local completion_item = entry.completion_item
+      local highlights_info = colorful_menu.highlights(completion_item, vim.bo.filetype)
+
+      -- error, such as missing parser, fallback to use raw label.
+      if highlights_info == nil then
+        vim_item.abbr = completion_item.label
+      else
+        vim_item.abbr_hl_group = highlights_info.highlights
+        vim_item.abbr = highlights_info.text
+      end
+
+      local kind = lspkind.cmp_format {
+        mode = "symbol_text",
+      }(entry, vim_item)
+      local strings = vim.split(kind.kind, "%s", { trimempty = true })
+      vim_item.kind = " " .. (strings[1] or "") .. " "
+      vim_item.menu = ""
+
+      return vim_item
+    end,
   },
   experimental = {
     ghost_text = true,
