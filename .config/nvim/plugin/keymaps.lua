@@ -24,10 +24,12 @@ i_keymap("<A-j>", "<Esc>:m .+1<CR>==gi", "Move line down")
 i_keymap("<A-k>", "<Esc>:m .-2<CR>==gi", "Move line up")
 v_keymap("<A-j>", ":m '>+1<CR>gv=gv", "Move line down")
 v_keymap("<A-k>", ":m '<-2<CR>gv=gv", "Move line up")
-n_keymap("<C-b>", ":NvimTreeFindFileToggle<CR>", "Toggle nvim-tree")
 
 -- Windows/Panes
 n_keymap("<leader>sv", "<C-w>v", "Split window vertically")
 n_keymap("<leader>sh", "<C-w>s", "Split window horizontally")
 n_keymap("<leader>se", "<C-w>=", "Make splits equal size")
 n_keymap("<leader>sx", "<cmd>close<CR>", "Close current split")
+
+-- Escape insert with jk
+i_keymap("jk", "<Esc>", "Exit insert/visual mode")

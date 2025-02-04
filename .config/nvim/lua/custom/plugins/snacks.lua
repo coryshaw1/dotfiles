@@ -2,6 +2,7 @@ return {
   "folke/snacks.nvim",
   priority = 1000,
   lazy = false,
+  ---@module "snacks"
   ---@type snacks.Config
   opts = {
     bigfile = { enabled = true },
@@ -78,6 +79,7 @@ return {
       enabled = true,
       style = "fancy",
     },
+    explorer = {},
     ---@class snacks.statuscolumn.Config
     statuscolumn = {
       enabled = true,
@@ -92,6 +94,14 @@ return {
         patterns = { "GitSign", "MiniDiffSign" },
       },
       refresh = 50, -- refresh at most every 50ms
+    },
+  },
+  keys = {
+    {
+      "<C-b>",
+      function()
+        Snacks.picker.explorer()
+      end,
     },
   },
 }
