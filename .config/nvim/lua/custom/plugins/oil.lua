@@ -11,7 +11,8 @@ return {
     "stevearc/oil.nvim",
     dependencies = { "nvim-tree/nvim-web-devicons" },
     config = function()
-      require("oil").setup {
+      local oil = require "oil"
+      oil.setup {
         default_file_explorer = false,
         columns = { "icon" },
         keymaps = {
@@ -33,9 +34,30 @@ return {
       }
 
       -- Open parent directory in current window
-      vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
+      vim.keymap.set("n", "-", function()
+        oil.open()
+
+        -- Wait until oil has opened, for a maximum of 1 second.
+        vim.wait(1000, function()
+          return oil.get_cursor_entry() ~= nil
+        end)
+        if oil.get_cursor_entry() then
+          oil.open_preview()
+        end
+      end, { desc = "Open parent directory" })
+
       -- Open parent directory in floating window
-      vim.keymap.set("n", "<space>-", require("oil").toggle_float)
+      vim.keymap.set("n", "<space>-", function()
+        oil.toggle_float()
+
+        -- Wait until oil has opened, for a maximum of 1 second.
+        vim.wait(1000, function()
+          return oil.get_cursor_entry() ~= nil
+        end)
+        if oil.get_cursor_entry() then
+          oil.open_preview()
+        end
+      end)
     end,
   },
 }
