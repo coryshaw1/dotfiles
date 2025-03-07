@@ -21,6 +21,9 @@ Once the files are cloned, we will use GNU Stow to create symlinks from the clon
 * [Kitty](https://github.com/kovidgoyal/kitty)
 * [oh-my-posh](https://github.com/JanDeDobbeleer/oh-my-posh)
 * [ghostty](https://github.com/ghostty-org/ghostty)
+* [bat](https://github.com/sharkdp/bat) - Better cat with syntax highlighting
+* [sesh](https://github.com/joshmedeski/sesh) - Easy session manager
+* [yazi](https://github.com/sxyazi/yazi) - Terminal file manager
 
 ## Installation
 ```bash
@@ -39,5 +42,3 @@ This will get you up and running, but there are various other things that need t
 * [fzf-git](https://github.com/junegunn/fzf-git.sh)
 * [zoxide](https://github.com/ajeetdsouza/zoxide) - Better cd
 * [eza](https://github.com/eza-community/eza) - Better ls
-* [bat](https://github.com/sharkdp/bat) - Better cat with syntax highlighting
-* [sesh](https://github.com/joshmedeski/sesh) - Easy session manager
