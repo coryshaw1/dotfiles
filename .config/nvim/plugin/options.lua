@@ -40,3 +40,6 @@ opt.smartcase = true
 opt.backspace = "indent,eol,start"
 
 opt.swapfile = false
+
+-- for avante
+opt.laststatus = 3

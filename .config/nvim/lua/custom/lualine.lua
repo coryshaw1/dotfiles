@@ -36,7 +36,7 @@ require("lualine").setup {
         color = { fg = "#ff9e64" },
       },
     },
-    lualine_x = { "fileformat", "encoding", "filetype", CodeStatsXp },
+    lualine_x = { "copilot", "fileformat", "encoding", "filetype", CodeStatsXp },
     lualine_y = { "progress" },
     lualine_z = { "location" },
   },

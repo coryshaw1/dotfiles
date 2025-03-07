@@ -11,10 +11,8 @@ return {
       "onsails/lspkind.nvim",
       { "L3MON4D3/LuaSnip", build = "make install_jsregexp" },
       "saadparwaiz1/cmp_luasnip",
-      {
-        "xzbdmw/colorful-menu.nvim",
-        opts = {},
-      },
+      { "xzbdmw/colorful-menu.nvim", opts = {} },
+      { "zbirenbaum/copilot-cmp", opts = {} },
     },
     config = function()
       require "custom.completion"
