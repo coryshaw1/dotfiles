@@ -14,7 +14,7 @@ return {
       suggestion = {
         enabled = true,
       },
-      copilot_node_command = vim.fn.expand "$HOME" .. "/.nvm/versions/node/v18.20.4/bin/node",
+      copilot_node_command = vim.fn.expand "$HOME" .. "/.nvm/versions/node/v20.18.1/bin/node",
     },
   },
   {
