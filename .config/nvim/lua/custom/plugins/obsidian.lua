@@ -1,12 +1,12 @@
 return {
-  "epwalsh/obsidian.nvim",
+  "obsidian-nvim/obsidian.nvim",
   version = "*", -- recommended, use latest release instead of latest commit
   lazy = true,
   ft = "markdown",
   dependencies = {
     "nvim-lua/plenary.nvim",
     "hrsh7th/nvim-cmp",
-    "nvim-telescope/telescope.nvim",
+    "folke/snacks.nvim",
     "nvim-treesitter/nvim-treesitter",
   },
   opts = {
@@ -23,6 +23,14 @@ return {
     daily_notes = {
       folder = "dailies",
     },
+    completion = {
+      -- Enables completion using nvim_cmp
+      nvim_cmp = true,
+      -- Enables completion using blink.cmp
+      blink = false,
+      -- Trigger completion at 2 chars.
+      min_chars = 2,
+    },
     note_id_func = function(title)
       local suffix = ""
       if title ~= nil then
@@ -36,6 +44,9 @@ return {
       end
       return suffix
     end,
+    picker = {
+      name = "snacks.pick",
+    },
     ui = {
       -- use render-markdown instead for these
       enable = false,
