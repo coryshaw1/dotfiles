@@ -3,6 +3,7 @@ return {
     "nvim-treesitter/nvim-treesitter",
     dependencies = {
       { "windwp/nvim-ts-autotag" },
+      { "echasnovski/mini.ai", version = "*", opts = {} },
     },
     build = ":TSUpdate",
     -- branch = "main",
@@ -54,6 +55,7 @@ return {
       }
 
       require("nvim-ts-autotag").setup()
+      require("mini.ai").setup()
     end,
   },
 }
