@@ -1,16 +1,13 @@
 export TERM="xterm-256color"
 
-# If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:/opt/homebrew/bin:$PATH
-export PATH=$PATH:/opt/homebrew/go/bin
+source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+# PATH is handled here
+source ~/.bash_profile
 
 # oh-my-posh
 eval "$(oh-my-posh init zsh --config ~/.config/oh-my-posh/theme.omp.toml)"
-# eval "$(oh-my-posh init zsh)"
-
-source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-source ~/.bash_profile
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm

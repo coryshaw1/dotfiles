@@ -1,7 +1,8 @@
 export PATH=/usr/local/bin:$PATH
 
-export PATH=/usr/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin:/usr/local/mysql/bin:/opt/homebrew/bin
-export PATH=/usr/local/mysql/bin:$PATH
+export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/mysql/bin:/opt/homebrew/bin:$HOME/.local/opt/go/bin:$HOME/go/bin
+export PATH=/usr/local/mysql/bin:/Users/coryshaw/.dotnet/tools:$PATH
+. "$HOME/.cargo/env"
 unset LSCOLORS
 export CLICOLOR=1
 export CLICOLOR_FORCE=1
