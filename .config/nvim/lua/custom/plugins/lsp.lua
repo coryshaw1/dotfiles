@@ -3,8 +3,8 @@ return {
     "neovim/nvim-lspconfig",
     dependencies = {
       "folke/neodev.nvim",
-      "williamboman/mason.nvim",
-      "williamboman/mason-lspconfig.nvim",
+      "mason-org/mason.nvim",
+      "mason-org/mason-lspconfig.nvim",
       "WhoIsSethDaniel/mason-tool-installer.nvim",
 
       { "j-hui/fidget.nvim", opts = {} },
@@ -102,18 +102,19 @@ return {
         return
       end
 
-      local angularls_path = mason_registry.get_package("angular-language-server"):get_install_path()
+      -- local angularls_path = mason_registry.get_package("angular-language-server"):get_install_path()
+      local angularls_path = "/usr/local/bin/ngserver"
       local angularcmd = {
         "ngserver",
         "--stdio",
         "--tsProbeLocations",
         table.concat({
-          angularls_path,
+          -- angularls_path,
           vim.uv.cwd(),
         }, ","),
         "--ngProbeLocations",
         table.concat({
-          angularls_path .. "/node_modules/@angular/language-server",
+          -- angularls_path .. "/node_modules/@angular/language-server",
           vim.uv.cwd(),
         }, ","),
       }
