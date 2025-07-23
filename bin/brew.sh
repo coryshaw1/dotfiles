@@ -54,6 +54,7 @@ apps=(
   taplo
   tmux
   tree-sitter
+  uv
   wget
   yazi
   zoxide

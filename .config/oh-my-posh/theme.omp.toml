@@ -1,6 +1,5 @@
-#:schema https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json
-
-version = 2
+"$schema" = "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json"
+version = 3
 final_space = true
 
 [[blocks]]
@@ -25,6 +24,12 @@ newline = true
   style = 'plain'
   foreground = 'p:blue'
   template = '{{ .UserName }} '
+
+  [[blocks.segments]]
+  type = "python"
+  style = 'plain'
+  foreground = 'p:lavender'
+  template = "  {{ if .Error }}{{ .Error }}{{ else }}{{ if .Venv }}({{ .Venv }}) {{ end }}{{ .Full }}{{ end }} "
 
   [[blocks.segments]]
   type = 'path'
