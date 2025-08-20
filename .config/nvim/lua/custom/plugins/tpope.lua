@@ -3,5 +3,4 @@ return {
   "tpope/vim-fugitive",
   "tpope/vim-sensible",
   "tpope/vim-speeddating",
-  "tpope/vim-surround",
 }
