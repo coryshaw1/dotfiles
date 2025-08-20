@@ -14,7 +14,7 @@ return {
       suggestion = {
         enabled = true,
       },
-      copilot_node_command = vim.fn.expand "$HOME" .. "/.nvm/versions/node/v20.18.1/bin/node",
+      copilot_node_command = vim.fn.expand "$HOME" .. "/.nvm/versions/node/v20.19.3/bin/node",
     },
   },
   {
@@ -27,6 +27,10 @@ return {
       "zbirenbaum/copilot.lua",
     },
     build = "make",
+    event = "VeryLazy",
+    ---@module 'avante'
+    ---@type avante.Config
     opts = { provider = "copilot" },
+    keys = {},
   },
 }
