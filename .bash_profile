@@ -31,3 +31,7 @@ export PATH="/usr/local/opt/avr-gcc/bin:$PATH"
 if [ -f /sw/etc/bash_completion ]; then
   . /sw/etc/bash_completion
 fi
+
+if [ -f "$HOME/.bash_secrets" ]; then
+  source "$HOME/.bash_secrets"
+fi
