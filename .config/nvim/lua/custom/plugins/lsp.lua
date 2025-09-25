@@ -23,8 +23,6 @@ return {
         capabilities = require("cmp_nvim_lsp").default_capabilities()
       end
 
-      local lspconfig = require "lspconfig"
-
       local servers = {
         bashls = true,
         csharp_ls = true,
@@ -92,7 +90,8 @@ return {
           capabilities = capabilities,
         }, config)
 
-        lspconfig[name].setup(config)
+        vim.lsp.config(name, config)
+        vim.lsp.enable { name }
       end
 
       -- angularls
@@ -119,12 +118,13 @@ return {
         }, ","),
       }
 
-      require("lspconfig").angularls.setup {
+      vim.lsp.config("angularls", {
         cmd = angularcmd,
         on_new_config = function(new_config)
           new_config.cmd = angularcmd
         end,
-      }
+      })
+      vim.lsp.enable { "angularls" }
 
       local disable_semantic_tokens = {
         lua = true,
