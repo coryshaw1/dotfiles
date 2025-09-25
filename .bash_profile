@@ -17,6 +17,9 @@ alias sudo="sudo "
 alias tmux="tmux -2"
 alias tm=sesh_connect_list
 alias cat="bat"
+alias man="batman"
+alias -g -- -h='-h 2>&1 | bat --language=help --style=plain'         # Global alias for -h to use bat
+alias -g -- --help='--help 2>&1 | bat --language=help --style=plain' # Global alias for --help to use bat
 alias cd="z"
 alias :q="exit"
 
