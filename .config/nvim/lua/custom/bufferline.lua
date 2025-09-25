@@ -10,7 +10,7 @@ require("bufferline").setup {
     numbers = "ordinal",
     separator_style = "slant",
   },
-  highlights = require("catppuccin.groups.integrations.bufferline").get_theme {
+  highlights = require("catppuccin.special.bufferline").get_theme {
     styles = { "italic", "bold" },
   },
 }
