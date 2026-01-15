@@ -33,3 +33,4 @@ macos-option-as-alt = true
 
 # Custom Keybinds
 keybind = super+r=reload_config
+keybind = shift+enter=text:\x1b\r
