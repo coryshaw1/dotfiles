@@ -1,6 +1,6 @@
 return {
   "olimorris/persisted.nvim",
-  lazy = false, -- make sure the plugin is always loaded at startup
+  event = "BufReadPre",
   config = true,
   opts = {
     should_save = function()

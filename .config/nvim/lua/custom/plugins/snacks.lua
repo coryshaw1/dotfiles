@@ -64,7 +64,7 @@ return {
             desc = "Config",
             action = ":lua Snacks.dashboard.pick('files', {cwd = vim.fn.stdpath('config'), follow = true, hidden = true })",
           },
-          { icon = " ", key = "g", desc = "Restore Session", action = ":SessionLoadLast" },
+          { icon = " ", key = "g", desc = "Restore Session", action = ":Persisted load_last" },
           { icon = "", key = "s", desc = "List Sessions", action = ":Telescope persisted" },
           { icon = "󰒲 ", key = "L", desc = "Lazy", action = ":Lazy", enabled = package.loaded.lazy ~= nil },
           { icon = " ", key = "q", desc = "Quit", action = ":qa" },
