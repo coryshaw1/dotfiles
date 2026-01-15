@@ -25,9 +25,9 @@ return {
     "folke/todo-comments.nvim",
   },
   ---@module "snacks"
-  ---@type snacks.Config
   opts = {
     bigfile = { enabled = true },
+    ---@class snacks.dashboard.Config
     dashboard = {
       enabled = true,
       preset = {
@@ -37,7 +37,6 @@ return {
         -- Used by the `keys` section to show keymaps.
         -- Set your custom keymaps here.
         -- When using a function, the `items` argument are the default keymaps.
-        ---@type snacks.dashboard.Item[]
         keys = {
           {
             icon = " ",
@@ -48,7 +47,7 @@ return {
           { icon = " ", key = "n", desc = "New File", action = ":ene | startinsert" },
           {
             icon = " ",
-            key = "g",
+            key = "t",
             desc = "Find Text",
             action = ":lua Snacks.dashboard.pick('live_grep', { follow = true, hidden = true })",
           },
@@ -110,6 +109,7 @@ return {
         { section = "startup" },
       },
     },
+    gh = {},
     image = {
       doc = {
         enabled = true,
@@ -127,6 +127,8 @@ return {
     picker = {
       hidden = true,
       exclude = excluded,
+      gh_issues = {},
+      gh_pr = {},
     },
     explorer = {},
     ---@class snacks.statuscolumn.Config
@@ -181,7 +183,12 @@ return {
 
     -- git
     { "<leader>lg", function() Snacks.lazygit() end, desc = "LazyGit" },
+    { "<leader>gg", function() Snacks.lazygit() end, desc = "Lazygit" },
     { "<leader>gl", function() Snacks.lazygit.log() end, desc = "Git Log" },
     { "<leader>gb", function() Snacks.picker.git_branches() end, desc = "Git Branches" },
+    { "<leader>gi", function() Snacks.picker.gh_issue() end, desc = "GitHub Issues (open)" },
+    { "<leader>gI", function() Snacks.picker.gh_issue({ state = "all" }) end, desc = "GitHub Issues (all)" },
+    { "<leader>gp", function() Snacks.picker.gh_pr() end, desc = "GitHub Pull Requests (open)" },
+    { "<leader>gP", function() Snacks.picker.gh_pr({ state = "all" }) end, desc = "GitHub Pull Requests (all)" },
   },
 }
