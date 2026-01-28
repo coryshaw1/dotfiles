@@ -1,7 +1,6 @@
 return {
   "obsidian-nvim/obsidian.nvim",
   version = "*", -- recommended, use latest release instead of latest commit
-  lazy = true,
   ft = "markdown",
   dependencies = {
     "nvim-lua/plenary.nvim",
@@ -9,15 +8,17 @@ return {
     "folke/snacks.nvim",
     "nvim-treesitter/nvim-treesitter",
   },
+  ---@module 'obsidian'
+  ---@type obsidian.config
   opts = {
     workspaces = {
       {
-        name = "personal",
-        path = "~/obsidian/personal",
-      },
-      {
         name = "work",
         path = "~/obsidian/work",
+      },
+      {
+        name = "personal",
+        path = "~/obsidian/personal",
       },
     },
     daily_notes = {
