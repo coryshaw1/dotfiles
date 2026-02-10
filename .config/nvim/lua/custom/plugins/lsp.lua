@@ -25,7 +25,8 @@ return {
 
       local servers = {
         bashls = true,
-        csharp_ls = true,
+        -- csharp_ls = true,
+        roslyn = true,
         gopls = true,
         lua_ls = {
           settings = {
@@ -88,7 +89,13 @@ return {
         end
       end, vim.tbl_keys(servers))
 
-      require("mason").setup()
+      require("mason").setup {
+        ensure_installed = ensure_installed,
+        registries = {
+          "github:crashdummyy/mason-registry",
+          "github:mason-org/mason-registry",
+        },
+      }
       local ensure_installed = {
         "stylua",
         "lua_ls",
@@ -97,6 +104,8 @@ return {
         "html",
         "cssls",
         "taplo",
+        -- "csharp_ls",
+        "roslyn",
       }
 
       vim.list_extend(ensure_installed, servers_to_install)
@@ -195,5 +204,10 @@ return {
         end,
       })
     end,
+  },
+  {
+    "seblyng/roslyn.nvim",
+    ft = { "cs", "razor" },
+    opts = {},
   },
 }
