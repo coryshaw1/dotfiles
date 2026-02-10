@@ -13,8 +13,5 @@ return {
     vim.keymap.set("n", "<leader>tt", function()
       vim.cmd "ToggleTerm"
     end, { desc = "Toggle terminal" })
-
-    -- Open terminal in insert mode
-    vim.cmd "autocmd! TermOpen term://* lua vim.cmd('startinsert')"
   end,
 }
