@@ -190,6 +190,7 @@ return {
           lua = { "stylua" },
           go = { "gofmt" },
           json = { "prettier" },
+          xml = { "xmlformatter" },
         },
         lsp_fallback = true,
       }
