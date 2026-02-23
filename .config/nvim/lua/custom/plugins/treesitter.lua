@@ -30,6 +30,7 @@ return {
           "python",
           "query",
           "regex",
+          "rust",
           "scss",
           "sql",
           "toml",

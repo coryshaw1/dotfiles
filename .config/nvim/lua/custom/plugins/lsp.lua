@@ -54,6 +54,7 @@ return {
         eslint = true,
         pylsp = true,
         taplo = true,
+        rust_analyzer = true,
 
         -- Probably want to disable formatting for this lang server
         ts_ls = true,
