@@ -11,11 +11,11 @@ local v_keymap = function(lhs, rhs, desc)
 end
 
 -- Toggle between relative line numbers and absolute
-vim.api.nvim_create_user_command("NumberToggle", function()
+vim.api.nvim_create_user_command("ToggleNumber", function()
   vim.opt.relativenumber = not vim.o.relativenumber
 end, { nargs = "?" })
 
-n_keymap("<leader>nt", ":NumberToggle<CR>", "Toggle between relative and absolute numbers")
+n_keymap("<leader>tn", ":ToggleNumber<CR>", "Toggle between relative and absolute numbers")
 
 -- Move lines with alt-[j/k]
 n_keymap("<A-j>", ":m .+1<CR>==", "Move line down")
