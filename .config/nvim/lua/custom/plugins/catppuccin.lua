@@ -59,6 +59,5 @@ return {
   config = function(_, opts)
     require("catppuccin").setup(opts)
     vim.cmd.colorscheme "catppuccin"
-    vim.cmd "hi Normal guibg=NONE ctermbg=NONE" -- force background to transparent, but not bufferline
   end,
 }

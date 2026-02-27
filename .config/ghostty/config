@@ -10,7 +10,6 @@ window-inherit-font-size = false
 window-padding-y = 0,0
 window-padding-balance = false
 macos-titlebar-style = hidden
-background-opacity = 1
 
 # Cursor
 cursor-click-to-move = true
