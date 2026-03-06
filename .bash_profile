@@ -22,6 +22,9 @@ alias -g -- -h='-h 2>&1 | bat --language=help --style=plain'         # Global al
 alias -g -- --help='--help 2>&1 | bat --language=help --style=plain' # Global alias for --help to use bat
 alias cd="z"
 alias :q="exit"
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
 
 function sesh_connect_list() {
   sesh connect $(sesh list -i | gum filter --limit 1 --placeholder 'Pick a sesh' --height 50 --prompt='⚡')
