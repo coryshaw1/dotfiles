@@ -55,6 +55,7 @@ apps=(
 	taplo
 	tmux
 	tree-sitter
+	tree-sitter-cli
 	uv
 	wget
 	yazi

@@ -6,13 +6,14 @@ return {
       { "nvim-mini/mini.ai", version = "*", opts = {} },
     },
     build = ":TSUpdate",
-    -- branch = "main",
+    branch = "main",
+    lazy = false,
     config = function()
-      local treesitter = require "nvim-treesitter.configs"
+      require("nvim-treesitter").setup()
 
-      ---@diagnostic disable-next-line: missing-fields
-      treesitter.setup {
-        ensure_installed = {
+      -- Install parsers on startup
+      vim.schedule(function()
+        require("nvim-treesitter").install {
           "bash",
           "css",
           "diff",
@@ -21,7 +22,6 @@ return {
           "javascript",
           "jsdoc",
           "json",
-          "jsonc",
           "lua",
           "luadoc",
           "luap",
@@ -32,8 +32,8 @@ return {
           "regex",
           "rust",
           "scss",
+          "sourcepawn",
           "sql",
-          "toml",
           "toml",
           "tsx",
           "typescript",
@@ -41,19 +41,20 @@ return {
           "vimdoc",
           "xml",
           "yaml",
-        },
-        highlight = { enable = true },
-        indent = { enable = true },
-        incremental_selection = {
-          enable = true,
-          keymaps = {
-            init_selection = "<C-space>",
-            node_incremental = "<C-space>",
-            scope_incremental = false,
-            node_decremental = "<bs>",
-          },
-        },
-      }
+        }
+      end)
+
+      -- Enable treesitter features for all filetypes
+      vim.api.nvim_create_autocmd("FileType", {
+        callback = function(args)
+          local ok = pcall(vim.treesitter.start, args.buf)
+          if not ok then
+            return
+          end
+          -- Treesitter-based indentation (experimental)
+          vim.bo[args.buf].indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+        end,
+      })
 
       require("nvim-ts-autotag").setup()
       require("mini.ai").setup()

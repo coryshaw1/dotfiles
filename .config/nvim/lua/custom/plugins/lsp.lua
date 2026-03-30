@@ -156,6 +156,30 @@ return {
       })
       vim.lsp.enable { "angularls" }
 
+      vim.api.nvim_create_autocmd("FileType", {
+        pattern = "sourcepawn",
+        callback = function(args)
+          local fname = vim.api.nvim_buf_get_name(args.buf)
+          vim.lsp.start {
+            name = "sourcepawn_studio",
+            cmd = { vim.fn.expand("~/.local/bin/sourcepawn-studio") },
+            root_dir = vim.fs.dirname(vim.fs.find({ ".git", "addons", "scripting" }, { upward = true, path = fname })[1])
+              or vim.fs.dirname(fname),
+            settings = {
+              SourcePawnLanguageServer = {
+                compiler = {
+                  onSave = true,
+                },
+                includeDirectories = {
+                  vim.fn.expand("~/.local/share/sourcemod/include"),
+                },
+              },
+            },
+            capabilities = capabilities,
+          }
+        end,
+      })
+
       local disable_semantic_tokens = {
         lua = true,
       }
