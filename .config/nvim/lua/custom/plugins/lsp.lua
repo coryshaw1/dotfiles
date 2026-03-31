@@ -18,15 +18,14 @@ return {
     config = function()
       require("neodev").setup {}
 
-      local capabilities = nil
+      local capabilities = vim.lsp.protocol.make_client_capabilities()
       if pcall(require, "cmp_nvim_lsp") then
-        capabilities = require("cmp_nvim_lsp").default_capabilities()
+        capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())
       end
 
       local servers = {
         bashls = true,
         -- csharp_ls = true,
-        roslyn = true,
         gopls = true,
         lua_ls = {
           settings = {
@@ -234,6 +233,10 @@ return {
   {
     "seblyng/roslyn.nvim",
     ft = { "cs", "razor" },
-    opts = {},
+    opts = {
+      config = {
+        capabilities = vim.lsp.protocol.make_client_capabilities(),
+      },
+    },
   },
 }
