@@ -51,8 +51,6 @@ return {
           if not ok then
             return
           end
-          -- Treesitter-based indentation (experimental)
-          vim.bo[args.buf].indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
         end,
       })
 
