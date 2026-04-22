@@ -105,7 +105,7 @@ return {
         "cssls",
         "taplo",
         -- "csharp_ls",
-        "roslyn",
+        "netcoredbg",
       }
 
       vim.list_extend(ensure_installed, servers_to_install)
@@ -255,14 +255,5 @@ return {
         end,
       })
     end,
-  },
-  {
-    "seblyng/roslyn.nvim",
-    ft = { "cs", "razor" },
-    opts = {
-      config = {
-        capabilities = vim.lsp.protocol.make_client_capabilities(),
-      },
-    },
   },
 }

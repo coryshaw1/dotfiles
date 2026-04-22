@@ -21,6 +21,7 @@ return {
       barbar = false,
       bufferline = false,
       cmp = true,
+      dap_ui = true,
       dashboard = true,
       fern = false,
       gitgutter = true,
