@@ -41,5 +41,16 @@ opt.backspace = "indent,eol,start"
 
 opt.swapfile = false
 
--- for avante
-opt.laststatus = 3
+-- default tab settings
+opt.tabstop = 4
+opt.shiftwidth = 4
+
+-- Command-line autocompletion
+vim.api.nvim_create_autocmd("CmdlineChanged", {
+  pattern = { ":", "/", "?" },
+  callback = function()
+    vim.fn.wildtrigger()
+  end,
+})
+opt.wildmode = "noselect:lastused,full"
+opt.wildoptions = "pum"
