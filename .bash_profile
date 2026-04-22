@@ -25,6 +25,7 @@ alias :q="exit"
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
+alias lg="lazygit"
 
 function sesh_connect_list() {
   sesh connect "$(
