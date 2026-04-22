@@ -27,7 +27,21 @@ alias ...='cd ../..'
 alias ....='cd ../../..'
 
 function sesh_connect_list() {
-  sesh connect $(sesh list -i | gum filter --limit 1 --placeholder 'Pick a sesh' --height 50 --prompt='⚡')
+  sesh connect "$(
+    sesh list --hide-duplicates -i | fzf \
+      --height 75% --layout=reverse --border --padding 1,2 --margin 1,2 \
+      --no-sort --border-label ' sesh ' --prompt '   ' \
+      --header '  ^a all ^t tmux ^g configs ^x zoxide ^d tmux kill ^f find' \
+      --ansi --nth 2.. \
+      --bind 'tab:down,btab:up' \
+      --bind 'ctrl-a:change-prompt(  )+reload(sesh list --hide-duplicates -i)' \
+      --bind 'ctrl-t:change-prompt(  )+reload(sesh list --hide-duplicates -it)' \
+      --bind 'ctrl-g:change-prompt(  )+reload(sesh list --hide-duplicates -ic)' \
+      --bind 'ctrl-x:change-prompt(  )+reload(sesh list --hide-duplicates -iz)' \
+      --bind 'ctrl-f:change-prompt(  )+reload(fd -H -d 2 -t d -E .Trash . ~)' \
+      --bind 'ctrl-d:execute(tmux kill-session -t {})+change-prompt(   )+reload(sesh list --hide-duplicates -i)' \
+      --preview 'sesh preview {}'
+  )"
 }
 
 eval "$(rbenv init -)"
