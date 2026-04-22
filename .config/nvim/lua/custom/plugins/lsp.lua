@@ -161,16 +161,17 @@ return {
           local fname = vim.api.nvim_buf_get_name(args.buf)
           vim.lsp.start {
             name = "sourcepawn_studio",
-            cmd = { vim.fn.expand("~/.local/bin/sourcepawn-studio") },
-            root_dir = vim.fs.dirname(vim.fs.find({ ".git", "addons", "scripting" }, { upward = true, path = fname })[1])
-              or vim.fs.dirname(fname),
+            cmd = { vim.fn.expand "~/.local/bin/sourcepawn-studio" },
+            root_dir = vim.fs.dirname(
+              vim.fs.find({ ".git", "addons", "scripting" }, { upward = true, path = fname })[1]
+            ) or vim.fs.dirname(fname),
             settings = {
               SourcePawnLanguageServer = {
                 compiler = {
                   onSave = true,
                 },
                 includeDirectories = {
-                  vim.fn.expand("~/.local/share/sourcemod/include"),
+                  vim.fn.expand "~/.local/share/sourcemod/include",
                 },
               },
             },
@@ -192,13 +193,16 @@ return {
 
           vim.opt_local.omnifunc = "v:lua.vim.lsp.omnifunc"
           vim.keymap.set("n", "gd", builtin.lsp_definitions, { buffer = 0, desc = "LSP: Go to definition" })
-          -- vim.keymap.set("n", "gr", vim.lsp.buf.references, { buffer = 0 }) -- set in telescope
+          -- vim.keymap.set("n", "gr", vim.lsp.buf.references, { buffer = 0 }) -- set in snacks
           vim.keymap.set("n", "gD", vim.lsp.buf.declaration, { buffer = 0, desc = "LSP: Go to declaration" })
           vim.keymap.set("n", "gT", vim.lsp.buf.type_definition, { buffer = 0, desc = "LSP: Type Definition" })
           vim.keymap.set("n", "K", vim.lsp.buf.hover, { buffer = 0, desc = "LSP: Hover details" })
 
           vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, { buffer = 0, desc = "LSP: Rename" })
           vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { buffer = 0, desc = "LSP: Code action" })
+          vim.keymap.set("n", "<leader>ce", function()
+            require("telescope.builtin").diagnostics { bufnr = 0, severity = vim.diagnostic.severity.ERROR }
+          end, { buffer = 0, desc = "LSP: Code errors in file" })
 
           local filetype = vim.bo[bufnr].filetype
           if disable_semantic_tokens[filetype] then
