@@ -8,6 +8,7 @@ return {
         linehl = true,
         current_line_blame = true,
         current_line_blame_formatter = "<author>, <author_time:%R> - <summary>",
+        attach_to_untracked = false,
         on_attach = function(bufnr)
           local gitsigns = require "gitsigns"
 
