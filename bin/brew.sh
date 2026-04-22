@@ -13,7 +13,7 @@ if test ! $(which brew); then
 	(
 		echo
 		echo 'eval "$(/opt/homebrew/bin/brew shellenv)"'
-	) >>~/.zprofile
+	) >>~/.zshenv
 	eval "$(/opt/homebrew/bin/brew shellenv)"
 else
 	echo "Homebrew is already installed..."
