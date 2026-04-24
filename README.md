@@ -25,6 +25,7 @@ Once the files are cloned, we will use GNU Stow to create symlinks from the clon
 * [sesh](https://github.com/joshmedeski/sesh) - Easy session manager
 * [yazi](https://github.com/sxyazi/yazi) - Terminal file manager
 * [duckdb](https://github.com/duckdb/duckdb) - Analytical database system for data science
+* [lazygit](https://github.com/jesseduffield/lazygit) - TUI for git
 
 ## Installation
 ```bash
