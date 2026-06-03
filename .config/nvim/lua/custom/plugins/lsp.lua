@@ -18,10 +18,11 @@ return {
     config = function()
       require("neodev").setup {}
 
-      local capabilities = vim.lsp.protocol.make_client_capabilities()
-      if pcall(require, "cmp_nvim_lsp") then
-        capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())
-      end
+      local capabilities = vim.tbl_deep_extend(
+        "force",
+        vim.lsp.protocol.make_client_capabilities(),
+        require("blink.cmp").get_lsp_capabilities()
+      )
 
       local servers = {
         bashls = true,

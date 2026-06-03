@@ -1,21 +1,23 @@
 return {
   {
-    "hrsh7th/nvim-cmp",
+    "saghen/blink.cmp",
     lazy = false,
-    priority = 100,
+    version = "1.*",
     dependencies = {
-      "onsails/lspkind.nvim",
-      "hrsh7th/cmp-nvim-lsp",
-      "hrsh7th/cmp-path",
-      "hrsh7th/cmp-buffer",
-      "onsails/lspkind.nvim",
       { "L3MON4D3/LuaSnip", build = "make install_jsregexp" },
-      "saadparwaiz1/cmp_luasnip",
+      "giuxtaposition/blink-cmp-copilot",
       { "xzbdmw/colorful-menu.nvim", opts = {} },
-      { "zbirenbaum/copilot-cmp", opts = {} },
+      "onsails/lspkind.nvim",
     },
     config = function()
-      require "custom.completion"
+      require "custom.blink"
     end,
+  },
+  -- blink.compat lets blink use nvim-cmp sources (dadbod, easy-dotnet fallback)
+  {
+    "saghen/blink.compat",
+    version = "2.*",
+    lazy = true,
+    opts = {},
   },
 }
