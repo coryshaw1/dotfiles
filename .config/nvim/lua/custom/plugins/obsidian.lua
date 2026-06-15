@@ -25,11 +25,6 @@ return {
       folder = "dailies",
     },
     completion = {
-      -- Enables completion using nvim_cmp
-      nvim_cmp = true,
-      -- Enables completion using blink.cmp
-      blink = false,
-      -- Trigger completion at 2 chars.
       min_chars = 2,
     },
     note_id_func = function(title)
